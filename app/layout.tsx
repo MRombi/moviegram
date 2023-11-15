@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Movies",
   keywords: ["movies"],
 };
-console.log(poppins.className);
+
 export default function RootLayout({
   children,
 }: {

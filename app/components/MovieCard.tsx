@@ -1,17 +1,27 @@
+import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import quokkas from "../images/index";
+
 type MovieCardProps = {
   title: string;
   overview: string;
   posterPath: string;
 };
 
+function getRandomInt(max: number) {
+  return Math.floor(Math.random() * max);
+}
+
 function MovieCard({ title, overview, posterPath }: MovieCardProps) {
-  const imageUrl = posterPath
+  const imageUrl: string | StaticImport = posterPath
     ? `https://image.tmdb.org/t/p/w500${posterPath}`
-    : "/no-image-available.png";
+    : quokkas[getRandomInt(4)];
 
   return (
     <div className="bg-white rounded shadow p-4">
-      <img
+      <Image
+        height={500}
+        width={500}
         className="w-full h-64 rounded mb-4"
         src={imageUrl}
         alt="movie banner"

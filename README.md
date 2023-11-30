@@ -9,6 +9,7 @@ First, install all the dependencies
 ```bash
 npm install
 ```
+Second, run the command to start the app
 
 ```bash
 npm run dev
